@@ -1,4 +1,4 @@
-export const menu = [
+export const FakeMenuData = [
   {
     _id: "642c155b2c4774f05c36eeaa",
     name: "Haddock",

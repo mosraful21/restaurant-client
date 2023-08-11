@@ -27,13 +27,13 @@ const NavBar = () => {
         <a href="/menu">Our Menu</a>
       </li>
       <li>
-        <a href="/">Our Shop</a>
+        <a href="/order/salad">Order Food</a>
       </li>
     </>
   );
 
   return (
-    <header className="fixed z-10 w-full bg-gray-700 bg-opacity-30 flex justify-around items-center py-4 px-6">
+    <header className="fixed z-10 w-full bg-gray-700 bg-opacity-30 flex md:justify-around justify-between items-center py-4 px-6">
       <div className="text-white">
         <p className="text-lg font-semibold">logo</p>
       </div>

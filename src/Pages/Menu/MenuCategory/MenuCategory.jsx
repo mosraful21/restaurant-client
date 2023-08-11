@@ -1,21 +1,13 @@
+import { Link } from "react-router-dom";
 import CommonButton from "../../../components/CommonButton/CommonButton";
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import { FakeMenuData } from "../../../fakeData/fakeManuData";
+import Cover from "../../Shared/Cover/Cover";
 
-
-const PopularMenu = () => {
-  const data = FakeMenuData;
-  const popularItems = data.filter((item) => item.category === "popular");
-
+const MenuCategory = ({ items, img, title, desc }) => {
   return (
-    <section className="md:w-4/5 md:p-0 p-2 mx-auto my-10">
-      <SectionTitle
-        subHeading="Popular Items"
-        heading="From our Menus"
-      ></SectionTitle>
-
-      <div className="grid md:grid-cols-2 gap-4">
-        {popularItems.map((item, index) => (
+    <div className="pt-8">
+      {title && <Cover bgImg={img} title={title} desc={desc}></Cover>}
+      <div className="grid md:grid-cols-2 gap-4 py-8">
+        {items.map((item, index) => (
           <div className="flex space-x-2 hover:bg-slate-100 p-5" key={index}>
             <img
               style={{ borderRadius: "0 200px 200px 200px" }}
@@ -33,9 +25,9 @@ const PopularMenu = () => {
           </div>
         ))}
       </div>
-      <CommonButton button="View Full  Menu"></CommonButton>
-    </section>
+      <Link to={`/order/${title}`}><CommonButton button="ORDER YOUR FAVOURITE FOOD"></CommonButton></Link>
+    </div>
   );
 };
 
-export default PopularMenu;
+export default MenuCategory;
