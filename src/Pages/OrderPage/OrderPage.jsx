@@ -26,6 +26,7 @@ const OrderPage = () => {
       <Helmet>
         <title>Restaurant | Order Food</title>
       </Helmet>
+
       <Cover
         bgImg={orderImg}
         title="Order Food"

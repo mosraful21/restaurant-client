@@ -6,6 +6,7 @@ const MenuCategory = ({ items, img, title, desc }) => {
   return (
     <div className="pt-8">
       {title && <Cover bgImg={img} title={title} desc={desc}></Cover>}
+
       <div className="grid md:grid-cols-2 gap-4 py-8">
         {items.map((item, index) => (
           <div className="flex space-x-2 hover:bg-slate-100 p-5" key={index}>
@@ -25,7 +26,10 @@ const MenuCategory = ({ items, img, title, desc }) => {
           </div>
         ))}
       </div>
-      <Link to={`/order/${title}`}><CommonButton button="ORDER YOUR FAVOURITE FOOD"></CommonButton></Link>
+
+      <Link to={`/order/${title}`}>
+        <CommonButton button="ORDER YOUR FAVOURITE FOOD"></CommonButton>
+      </Link>
     </div>
   );
 };

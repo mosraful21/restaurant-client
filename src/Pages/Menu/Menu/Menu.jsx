@@ -13,9 +13,9 @@ const Menu = () => {
   const menu = FakeMenuData;
   const offered = menu.filter((item) => item.category === "offered");
   const desserts = menu.filter((item) => item.category === "dessert");
-  const pizza = menu.filter(item => item.category === 'pizza');
-  const salads = menu.filter(item => item.category === 'salad');
-  const soups = menu.filter(item => item.category === 'soup');
+  const pizza = menu.filter((item) => item.category === "pizza");
+  const salads = menu.filter((item) => item.category === "salad");
+  const soups = menu.filter((item) => item.category === "soup");
 
   return (
     <div>
@@ -30,11 +30,11 @@ const Menu = () => {
       ></Cover>
 
       <div className="md:w-4/5 md:p-0 p-2 mx-auto my-10">
+        {/* offered menu items */}
         <SectionTitle
           subHeading="Don't Miss"
           heading="Today's Offer"
         ></SectionTitle>
-        {/* offered menu items */}
         <MenuCategory items={offered}></MenuCategory>
 
         {/* desserts menu items */}
