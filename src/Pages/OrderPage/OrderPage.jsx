@@ -22,7 +22,7 @@ const OrderPage = () => {
   const drinks = menu.filter((item) => item.category === "drinks");
 
   return (
-    <div className="md:w-4/5 md:p-0 p-2 mx-auto">
+    <div>
       <Helmet>
         <title>Restaurant | Order Food</title>
       </Helmet>
@@ -33,34 +33,36 @@ const OrderPage = () => {
         desc="would you like to try a dish?"
       ></Cover>
 
-      <Tabs
-        defaultIndex={tabIndex}
-        onSelect={(index) => setTabIndex(index)}
-        className="py-10"
-      >
-        <TabList>
-          <Tab>Salad</Tab>
-          <Tab>Pizza</Tab>
-          <Tab>Soups</Tab>
-          <Tab>Dessert</Tab>
-          <Tab>Deinks</Tab>
-        </TabList>
-        <TabPanel>
-          <OrderTab items={salads}></OrderTab>
-        </TabPanel>
-        <TabPanel>
-          <OrderTab items={pizza}></OrderTab>
-        </TabPanel>
-        <TabPanel>
-          <OrderTab items={soups}></OrderTab>
-        </TabPanel>
-        <TabPanel>
-          <OrderTab items={desserts}></OrderTab>
-        </TabPanel>
-        <TabPanel>
-          <OrderTab items={drinks}></OrderTab>
-        </TabPanel>
-      </Tabs>
+      <div className="md:w-4/5 md:p-0 p-2 mx-auto">
+        <Tabs
+          defaultIndex={tabIndex}
+          onSelect={(index) => setTabIndex(index)}
+          className="py-10"
+        >
+          <TabList>
+            <Tab>Salad</Tab>
+            <Tab>Pizza</Tab>
+            <Tab>Soups</Tab>
+            <Tab>Dessert</Tab>
+            <Tab>Deinks</Tab>
+          </TabList>
+          <TabPanel>
+            <OrderTab items={salads}></OrderTab>
+          </TabPanel>
+          <TabPanel>
+            <OrderTab items={pizza}></OrderTab>
+          </TabPanel>
+          <TabPanel>
+            <OrderTab items={soups}></OrderTab>
+          </TabPanel>
+          <TabPanel>
+            <OrderTab items={desserts}></OrderTab>
+          </TabPanel>
+          <TabPanel>
+            <OrderTab items={drinks}></OrderTab>
+          </TabPanel>
+        </Tabs>
+      </div>
     </div>
   );
 };

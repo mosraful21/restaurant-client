@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
   const toggleNavMenu = () => {
@@ -10,6 +12,12 @@ const NavBar = () => {
 
   const closeNavMenu = () => {
     setIsNavMenuOpen(false);
+  };
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
   };
 
   const menuItem = (
@@ -29,6 +37,24 @@ const NavBar = () => {
       <li>
         <a href="/order/salad">Order Food</a>
       </li>
+      <li>
+        <a href="/secret">Secret</a>
+      </li>
+
+      {user ? (
+        <>
+        <span>{user?.displayName}</span>
+          <li onClick={handleLogOut}>
+            <a href="/">Log Out</a>
+          </li>
+        </>
+      ) : (
+        <>
+          <li>
+            <a href="/login">Login</a>
+          </li>
+        </>
+      )}
     </>
   );
 
